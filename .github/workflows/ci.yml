@@ -1,10 +1,11 @@
 name: Continuous integration
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+  [push]
+  # pull_request:
+  # push:
+  #   branches:
+  #     - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -174,7 +175,7 @@ jobs:
         rust-version: [
           1.67.1, # current stable
           beta
-        ]
+         ]
     steps:
       - name: Install Protoc
         run: sudo apt-get install protobuf-compiler
