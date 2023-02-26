@@ -192,9 +192,7 @@ jobs:
           save-if: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Run cargo clippy
-        uses: actions-rs/cargo@844f36862e911db73fe0815f00a4a2602c279505 # v1.0.3
-        with:
-          command: custom-clippy # cargo alias to allow reuse of config locally
+        uses: qernal/github-actions-rust-clippy@v2.0.2 
 
   ipfs-integration-test:
     name: IPFS Integration tests
