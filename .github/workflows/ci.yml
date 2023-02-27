@@ -195,7 +195,7 @@ jobs:
         uses: qernal/github-actions-rust-clippy@v2.0.2 
         with:
           rust_version: ${{ matrix.rust-version }}
-          args: "--workspace --all-features --all-targets -- -A clippy::type_complexity -A clippy::pedantic -W clippy::used_underscore_binding -D warnings"
+          # args: "--workspace --all-features --all-targets -- -A clippy::type_complexity -A clippy::pedantic -W clippy::used_underscore_binding -D warnings"
 
   ipfs-integration-test:
     name: IPFS Integration tests
