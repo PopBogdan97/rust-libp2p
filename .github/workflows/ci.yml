@@ -190,6 +190,8 @@ jobs:
           toolchain: ${{ matrix.rust-version }}
           components: clippy
 
+      - uses: r7kamura/rust-problem-matchers@v1
+
       - uses: Swatinem/rust-cache@359a70e43a0bb8a13953b04a90f76428b4959bb6 # v2.2.0
         with:
           save-if: ${{ github.ref == 'refs/heads/master' }}
