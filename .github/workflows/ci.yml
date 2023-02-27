@@ -180,8 +180,8 @@ jobs:
       - name: Install Protoc
         run: sudo apt-get install protobuf-compiler
 
-      - name: Export Protoc installation path
-        run: export PROTOC=$(which protoc)
+      # - name: Export Protoc installation path
+      #   run: export PROTOC=$(which protoc)
 
       - uses: actions/checkout@v3
 
@@ -194,10 +194,12 @@ jobs:
         with:
           save-if: ${{ github.ref == 'refs/heads/master' }}
 
-      - name: Run cargo clippy
-        uses: qernal/github-actions-rust-clippy@v2.0.2 
-        with:
-          rust_version: ${{ matrix.rust-version }}
+      - name: Run cargo Clippy
+        run: cargo clippy --all-targets --all-features
+      # - name: Run cargo clippy
+        # uses: qernal/github-actions-rust-clippy@v2.0.2 
+        # with:
+        #   rust_version: ${{ matrix.rust-version }}
           # args: "--workspace --all-features --all-targets -- -A clippy::type_complexity -A clippy::pedantic -W clippy::used_underscore_binding -D warnings"
 
   ipfs-integration-test:
