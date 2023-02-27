@@ -195,7 +195,7 @@ jobs:
           save-if: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Run cargo Clippy
-        run: cargo clippy --all-targets --all-features
+        run: cargo clippy --workspace --all-features --all-targets -- -A clippy::type_complexity -A clippy::pedantic -W clippy::used_underscore_binding -D warnings 
       # - name: Run cargo clippy
         # uses: qernal/github-actions-rust-clippy@v2.0.2 
         # with:
