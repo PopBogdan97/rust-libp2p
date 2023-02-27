@@ -180,6 +180,9 @@ jobs:
       - name: Install Protoc
         run: sudo apt-get install protobuf-compiler
 
+      - name: Export Protoc installation path
+        run: export PROTOC=$(which protoc)
+
       - uses: actions/checkout@v3
 
       - uses: dtolnay/rust-toolchain@9cd00a88a73addc8617065438eff914dd08d0955 # v1
